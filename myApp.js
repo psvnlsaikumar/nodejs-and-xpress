@@ -1,6 +1,8 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const mongoose = require('mongoose'); 
+const UserModel = require('./models/user');
 
 // --> 7)  Mount the Logger middleware here
 
@@ -39,14 +41,34 @@ app.get('/:word/echo', function(req, res){
     res.json({"echo": req.params.word});
 });
 
-app.route('/login').get(function(req, res, next){
-    req.name = req.query.username + " " + req.query.password;
-    res.json({"name": req.name});
+app.route('/login').post(function(req, res, next){
+    UserModel.findUserByUsernameAndPassword({"username": req.body.username
+                                              ,"password": req.body.password}, 
+function(err, data){
+        if(err){
+          res.json({success: 0});
+          console.log(err);
+        } 
+        res.json({success: 1});
+        next();
+    })
+});
+
+app.route('/signup').post((req, res, next) => {
+  UserModel.createUserAndSave({"username": req.body.username,
+                               "password": req.body.password,
+                               "firstname": req.body.firstname,
+                               "lastname": req.body.lastname,
+                               "phone": req.body.phone,
+                               "email": req.body.email
+                              }, function(err, data){
+    if(err) {
+      res.json({success: 0});
+      console.log(err);
+    }
+    res.json(data);
     next();
-}).post(function(req, res, next){
-    res.json({"username" : req.body.username,
-              "password": req.body.password});
-    next();
+  })
 });
 
 

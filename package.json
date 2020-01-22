@@ -6,7 +6,9 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git",
-    "@types/body-parser": "^1.17.1"
+    "@types/body-parser": "^1.17.1",
+    "mongodb": "^3.5.1",
+    "mongoose": "^5.8.9"
   },
   "main": "server.js",
   "scripts": {

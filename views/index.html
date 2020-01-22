@@ -1,26 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>Hello HTML</title>
-		<link rel="stylesheet" href="/style.css">
-	</head>
-	<body>
-		<h1>Hello, HTML.</h1>
-		<p>Do not use until Challenge #12</p>
-     <form action="/name" method="post">
-      <label>First Name :</label>
-      <input type="text" name="first" value="John"><br>
-      <label>Last Name :</label>
-      <input type="text" name="last" value="Doe"><br><br>
-      <input type="submit" value="Submit">
-    </form> 
-	</body>
-
-</html>
- -->
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -31,13 +8,35 @@
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
-		<h1>Login</h1>
-     <form action="/login" method="post">
-      <label>Username :</label>
-      <input id = "username" type="text" name="username" placeholder="username"><br>
-      <label>Password :</label>
-      <input id = "password" type="password" name="password" placeholder="password"><br><br>
-      <input type="submit" value="Submit">
-    </form> 
+    <div id="login-container">
+      <h1>Login</h1>
+         <form action="/login" method="post">
+          <label>Username :</label>
+          <input id = "username" type="text" name="username" placeholder="username"><br>
+          <label>Password :</label>
+          <input id = "password" type="password" name="password" placeholder="password"><br><br>
+          <input type="submit" value="Submit">
+        </form> 
+    </div>
+    
+    <div id = "signup-container">
+      <h1>Sign Up!</h1>
+      <form action="/signup" method="post">
+          <label>User Name:</label>
+          <input id = "user_name" type = "text" name="username" placeholder="username"><br>
+          <label>First Name :</label>
+          <input id = "first_name" type="text" name="firstName" placeholder="first name"><br>
+          <label>Last Name :</label>
+          <input id = "last_name" type="text" name="lastName" placeholder="last name"><br>
+          <label>Phone Number :</label>
+          <input id = "phone" type="text" name="phone" placeholder="phone"><br>
+          <label>Email Address :</label>
+          <input id = "email" type="email" name="email" placeholder="email"><br>
+          <label>Password :</label>
+          <input id = "password" type="password" name="password" placeholder="password"><br><br>
+          <input type="submit" value="Submit">
+        </form> 
+    </div>
+		
 	</body>
 </html>
